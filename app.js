@@ -12,13 +12,14 @@ function sum(a, b) { //eslint-disable-line
   let sum = a + b
   // The sum of 4 and 7 is 11.
   let string = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
-  console.log(string);
+  
   return [sum, string];
 }
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
+console.log(sum(4,7)[1]);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -33,12 +34,14 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   let multiply = a * b;
   let line = 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.';
-  console.log(line);
+ 
   return [multiply, line];
 }
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
+
+console.log(multiply(5,9)[1]);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -52,7 +55,7 @@ Fourth element: "The product of 4 and 7 and 5 is 140."
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
-
+let sampleArry= [4,7,5];
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 // your previous function sum returns an array. let answer = sum(10, 5)[0];
@@ -70,6 +73,9 @@ return[answer, answer3, string2, string1];
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
+// console.log(sumAndMultiply(4,7,5)[2])
+// console.log(sumAndMultiply(4,7,5)[3])
+
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -77,7 +83,7 @@ testSumAndMultiply(4,7,5);
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
-
+"2,3,4, was passed in as an array of numbers, and 9 is their sum."
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
@@ -85,13 +91,35 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(sumArry) { //eslint-disable-line
+  let x = sum(testArray[0],testArray[1])[0];
+  sumArry = sum(x, testArray[2])[0];
+  let newString = (testArray[0]+ ',' + testArray[1]+ ',' + testArray[2]+ ' was passed in as an array of numbers, and ' +sumArry+  ' is their sum.');
 
+  return[sumArry, newString]; 
 }
+
+
+testSumArray(testArray);
+
+console.log(sumArray());
+
+
+// for(let i=0; i < 3; i++)
+// while(i < 3){
+//  let x = sum(testArray[i], testArray[i+1])[0];
+//  console.log(i);
+
+//   if(i+1 < 5){
+//     sumArry = sum(x,testArray[i+1])[0];
+    
+  
+//   }
+//   return [sumArry, ]
+// }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
